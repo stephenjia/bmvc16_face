@@ -14,9 +14,9 @@ If you use our code in your research, please cite following paper:
   year      = {2016}
 }
 ```
-Example:
-![face rotation](https://lh3.googleusercontent.com/mM-K9csNYv_K52PP5g08ZCaoN3BwEVoXE6LxUgW_oZ4fMUlVtRlBc1hMKrv_G6riL17l1sXljORiR7Y=w1920-h1005)
-![face inpainting](https://lh6.googleusercontent.com/fDsSIWvj2F6lA2v28xQlzKNKcQiOVUWH0SkDMFmunA3xk7Hi7oMD7hYMh52hFrSYrQLBOs-_iq4p-eI=w1920-h1005)
+Example: <br />
+![face rotation](https://lh3.googleusercontent.com/mM-K9csNYv_K52PP5g08ZCaoN3BwEVoXE6LxUgW_oZ4fMUlVtRlBc1hMKrv_G6riL17l1sXljORiR7Y=w1920-h1005) <br />
+![face inpainting](https://lh6.googleusercontent.com/fDsSIWvj2F6lA2v28xQlzKNKcQiOVUWH0SkDMFmunA3xk7Hi7oMD7hYMh52hFrSYrQLBOs-_iq4p-eI=w1920-h1005) <br />
 
 # Installing
 * Install [Lasagne](https://lasagne.readthedocs.io/en/latest/user/installation.html) and its prerequisites.
@@ -24,18 +24,18 @@ Example:
 
 
 # Demo
-* Run the experiments for face rotation:
+* Run the experiments for face rotation: <br />
 First change the configuration of the experiment in ```config_stageX_color.py```
 Then run
 ```
 python train_stage1_color.py
 ```
-to train the first stage model and write checkpoint files to the checkpoints directory.
+to train the first stage model and write checkpoint files to the checkpoints directory. <br />
 Then run
 ```
 python train_stage2_color.py
 ```
-to train the second stage model and write checkpoint files to the checkpoints directory.
+to train the second stage model and write checkpoint files to the checkpoints directory. <br />
 To evaluate the trained models on test data, run
 ```
 python generate_triplet_demo_color.py
