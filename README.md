@@ -15,9 +15,7 @@ If you use our code in your research, please cite following paper:
 }
 ```
 Example: <br />
-<!-- face rotation <br /> -->
 ![face rotation](https://lh3.googleusercontent.com/mM-K9csNYv_K52PP5g08ZCaoN3BwEVoXE6LxUgW_oZ4fMUlVtRlBc1hMKrv_G6riL17l1sXljORiR7Y=w1920-h1005) <br />
-<!-- face inpainting <br /> -->
 ![face inpainting](https://lh6.googleusercontent.com/fDsSIWvj2F6lA2v28xQlzKNKcQiOVUWH0SkDMFmunA3xk7Hi7oMD7hYMh52hFrSYrQLBOs-_iq4p-eI=w1920-h1005) <br />
 
 # Installing
