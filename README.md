@@ -15,7 +15,8 @@ If you use our code in your research, please cite following paper:
 }
 ```
 Example:
-![face rotation](https://drive.google.com/file/d/0B2k_yg56pxkxWUpvQk45dlhCVVk/view?usp=sharing)
+![face rotation](https://lh3.googleusercontent.com/mM-K9csNYv_K52PP5g08ZCaoN3BwEVoXE6LxUgW_oZ4fMUlVtRlBc1hMKrv_G6riL17l1sXljORiR7Y=w1920-h1005)
+![face inpainting](https://lh6.googleusercontent.com/fDsSIWvj2F6lA2v28xQlzKNKcQiOVUWH0SkDMFmunA3xk7Hi7oMD7hYMh52hFrSYrQLBOs-_iq4p-eI=w1920-h1005)
 
 # Installing
 * Install [Lasagne](https://lasagne.readthedocs.io/en/latest/user/installation.html) and its prerequisites.
