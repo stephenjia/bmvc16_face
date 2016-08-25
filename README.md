@@ -14,7 +14,8 @@ If you use our code in your research, please cite following paper:
   year      = {2016}
 }
 ```
-
+Example:
+![face rotation](https://drive.google.com/file/d/0B2k_yg56pxkxWUpvQk45dlhCVVk/view?usp=sharing)
 
 # Installing
 * Install [Lasagne](https://lasagne.readthedocs.io/en/latest/user/installation.html) and its prerequisites.
