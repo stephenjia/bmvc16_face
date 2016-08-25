@@ -107,7 +107,6 @@ updates = apply_momentum(updates_sgd, all_params_2, momentum=0.95)
 _train_2 = theano.function([img_batch, img_batch_gen, img_batch_target], train_loss_2, updates=updates, allow_input_downcast=True)
 
 # ------------ training ----------------
-split = 'train'
 print("Train...")
 if options['start_epoch']==0:
     start_epoch = 0

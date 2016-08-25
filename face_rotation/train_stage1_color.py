@@ -49,6 +49,7 @@ def save_model(filepath, layers, options, epoch, history_train):
 
 
 # -------- main function ------------------
+options['debug_flag'] = True
 if options['debug_flag'] is True:
     import pdb; pdb.set_trace()
 host = socket.gethostname() # get computer hostname
@@ -94,7 +95,6 @@ updates = apply_momentum(updates_sgd, all_params, momentum=0.95)
 _train = theano.function([img_batch, pose_code, img_batch_target], train_loss, updates=updates, allow_input_downcast=True)
 
 # ------------ training ----------------
-split = 'train'
 print("Train...")
 if options['start_epoch']==0:
     start_epoch = 0
