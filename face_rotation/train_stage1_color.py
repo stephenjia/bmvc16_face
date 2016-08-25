@@ -30,7 +30,6 @@ def load_model(layers, filepath):
 
 """ save model """
 def save_model(filepath, layers, options, epoch, history_train):
-    # model.layers
     model_values = lasagne.layers.get_all_param_values(layers, trainable=True)
     # save model
     checkpoint = {}
@@ -69,7 +68,6 @@ options['img_size'] = (w,h,c)
 
 # ---------- build model and compile ---------------
 loss_fun = squared_error
-# input
 img_batch = T.tensor4() # (batch_size, channel, npx, npx)
 pose_code = T.matrix() 
 img_batch_target = T.tensor4() 
@@ -87,7 +85,7 @@ train_loss = lasagne.objectives.squared_error(generation.reshape((generation.sha
 train_loss = train_loss.sum(axis=1)
 train_loss = train_loss.mean()     
 # update
-lrn_rate = T.cast(theano.shared(options['learning_rate']), 'floatX') # dynamic learning rate
+lrn_rate = T.cast(theano.shared(options['learning_rate']), 'floatX') # we can use dynamic learning rate
 optimizer = sgd
 updates_sgd = optimizer(train_loss, all_params, learning_rate=lrn_rate) 
 updates = apply_momentum(updates_sgd, all_params, momentum=0.95)

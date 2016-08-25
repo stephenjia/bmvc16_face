@@ -56,13 +56,13 @@ options['host'] = host
 options['time_start'] = datetime.datetime.now().strftime("%y-%m-%d-%H-%M")
 # prepare data            
 print('Prepare data...')  
-fid = open(os.path.join(options['dataset_root'],'dataset_32_prepared_aligned.pkl'),'rb')
-train_pair, test_pair = pickle.load(fid)
-fid.close()
-fid = open(os.path.join(options['dataset_root'],'dataset_60_color_normalized_aligned.pkl'), 'rb')
-train_set, train_img, train_code, train_mean_list, train_var_list, test_set, test_img, test_code, test_mean_list, test_var_list = pickle.load(fid)
-fid.close()
-_, w, h, c = train_img.shape
+fid_syn = open(os.path.join(options['dataset_root'],'dataset_60_color_normalized_syn.pkl'), 'rb')
+train_set_x, train_img_x, train_code_x, train_mean_list_x, train_var_list_x, test_set_x, test_img_x, test_code_x, test_mean_list_x, test_var_list_x = pickle.load(fid_syn)
+fid_syn.close()
+fid_ori = open(os.path.join(options['dataset_root'],'dataset_60_color_normalized_aligned.pkl'), 'rb')
+train_set_y, train_img_y, train_code_y, train_mean_list_y, train_var_list_y, test_set_y, test_img_y, test_code_y, test_mean_list_y, test_var_list_y = pickle.load(fid_ori)
+fid_ori.close()
+_, w, h, c = train_img_x.shape
 options['img_size'] = (w,h,c) 
 
 # ---------- build model and compile ---------------
@@ -81,7 +81,7 @@ checkpoint_1 = pickle.load(open(options['checkpoint_output_directory']+options['
 lasagne.layers.set_all_param_values(layers_1, checkpoint_1['model_values'], trainable=True)
 
 print('Build model stage2...')
-options['fappend'] = 'rotate_aligned_60_recurrent'
+options['fappend'] = 'inpainting_aligned_60_color_stage2'
 options['learning_rate'] = 1e-6
 img_batch_gen = T.tensor4()
 img_batch_target = T.tensor4()
@@ -118,7 +118,8 @@ verbose = options.get('verbose',1)
 shuffle = options.get('shuffle', True)    
 img_size = options['img_size']
 
-index_array = np.arange(len(train_pair))
+index_array = np.arange(len(train_img_x))
+
 print 'Start training ...'
 history_train = {} 
 for epoch in range(start_epoch, start_epoch+nb_epoch):
@@ -133,13 +134,9 @@ for epoch in range(start_epoch, start_epoch+nb_epoch):
         batch_end = min(len(index_array), (batch_index+1)*batch_size)
         batch_ids = index_array[batch_start:batch_end]
         
-        batch_train_pair = [train_pair[id] for id in batch_ids]                
-        batch_train_x_ids = [tup[0] for tup in batch_train_pair]
-        batch_train_y_ids = [tup[1] for tup in batch_train_pair]
-        
-        x_train_img = np.reshape(train_img[batch_train_x_ids], (len(batch_ids),img_size[0],img_size[1],img_size[2]))
-        y_train_code = train_code[batch_train_y_ids]
-        y_train_img = np.reshape(train_img[batch_train_y_ids], (len(batch_ids),img_size[0],img_size[1],img_size[2]))        
+        x_train_img = np.reshape(train_img_x[batch_ids], (len(batch_ids),img_size[0],img_size[1],img_size[2]))
+        y_train_code = train_code_y[batch_ids]
+        y_train_img = np.reshape(train_img_y[batch_ids], (len(batch_ids),img_size[0],img_size[1],img_size[2]))         
         
         # generate using the model of stage1
         z_train_img = _generate_1(x_train_img, y_train_code)

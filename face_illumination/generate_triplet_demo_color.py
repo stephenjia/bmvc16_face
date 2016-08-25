@@ -32,7 +32,10 @@ fid = open(os.path.join('/esat/ruchba/xjia/image_generation/multi_pie/','dataset
 train_pair, test_pair = pickle.load(fid)
 fid.close()
 fid = open(os.path.join('/esat/ruchba/xjia/image_generation/multi_pie/','dataset_60_color_normalized_aligned.pkl'), 'rb')
-train_set, train_img, train_code, train_mean_list, train_var_list, test_set, test_img, test_code, test_mean_list, test_var_list = pickle.load(fid)
+train_set, train_img, _, train_mean_list, train_var_list, test_set, test_img, _, test_mean_list, test_var_list = pickle.load(fid)
+fid.close()
+fid = open(os.path.join('/esat/ruchba/xjia/image_generation/multi_pie/','dataset_60_color_normalized_aligned_illum.pkl'), 'rb')
+train_code, test_code = pickle.load(fid)
 fid.close()
 _, w, h, c = train_img.shape
 
@@ -41,7 +44,7 @@ img_batch = T.tensor4()  # (batch_size, rgb, npx, npx)
 pose_code = T.matrix() 
 
 print('Build model stage1...')
-checkpoint_1 = pickle.load(open('/esat/tiger/xjia/image_generation/multipie/model_checkpoint_multi_pie_16-04-13-10-10_andromeda.esat.kuleuven.be_rotate_aligned_60_color_onebranch_epoch199_train_810.648.p', 'rb')) # the model trained at the first stage
+checkpoint_1 = pickle.load(open('/esat/tiger/xjia/image_generation/multipie_illum/model_checkpoint_multi_pie_16-05-04-20-46_andromeda.esat.kuleuven.be_illum_aligned_60_color_onebranch_epoch199_train_434.350.p', 'rb')) # the model trained at the first stage
 model_stage1 = Model_stage1(checkpoint_1['options'])
 net_1, l_pose_reshape = model_stage1.build_model(img_batch, pose_code)
 layers_1 = get_all_layers(net_1)
@@ -53,7 +56,7 @@ lasagne.layers.set_all_param_values(layers_1, checkpoint_1['model_values'], trai
 print('Build model stage2...')
 img_batch_gen = T.tensor4()
 img_batch_target = T.tensor4()
-checkpoint_2 = pickle.load(open('/esat/tiger/xjia/image_generation/multipie/model_checkpoint_multi_pie_16-04-19-10-13_andromeda.esat.kuleuven.be_rotate_aligned_60_recurrent_epoch199_train_592.584.p', 'rb'))
+checkpoint_2 = pickle.load(open('/esat/tiger/xjia/image_generation/multipie_illum/model_checkpoint_multi_pie_16-05-07-15-32_andromeda.esat.kuleuven.be_illum_aligned_60_recurrent_epoch119_train_409.222.p', 'rb'))
 model_stage2 = Model_stage2(checkpoint_2['options'])
 net_2 = model_stage2.build_model(img_batch, img_batch_gen)
 layers_2 = get_all_layers(net_2)

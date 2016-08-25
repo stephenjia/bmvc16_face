@@ -23,16 +23,17 @@ If you use our code in your research, please cite following paper:
 
 # Demo
 * Run the experiments for face rotation:
-First run
+First change the configuration of the experiment in ```config_stageX_color.py```
+Then run
 ```
 python train_stage1_color.py
 ```
-This will write checkpoint files to the checkpoints directory.
+to train the first stage model and write checkpoint files to the checkpoints directory.
 Then run
 ```
 python train_stage2_color.py
 ```
-This will write checkpoint files to the checkpoints directory.
+to train the second stage model and write checkpoint files to the checkpoints directory.
 To evaluate the trained models on test data, run
 ```
 python generate_triplet_demo_color.py
@@ -41,7 +42,7 @@ python generate_triplet_demo_color.py
 
 # Dataset
 You need to first download MultiPIE dataset.
-To crop and align faces, we use the code provided by Junho Yim for their cvpr15 paper titled ```Rotating Your Face Using Multi-task Deep Neural Network```. Please cite their paper if you use this code.
+To crop and align faces, we use the code provided by Junho Yim for their cvpr15 paper titled ```Rotating Your Face Using Multi-task Deep Neural Network```. Please cite their paper if you use this code for face cropping and alignment.
 
 
 # Results

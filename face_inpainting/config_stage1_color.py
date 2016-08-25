@@ -3,9 +3,8 @@ options = {}
 # global setup settings, and checkpoints
 options['dataset'] = 'multi_pie'
 options['dataset_root'] = '/esat/ruchba/xjia/image_generation/multi_pie/'
-options['checkpoint_output_directory'] = '/esat/tiger/xjia/image_generation/multipie/'
-options['fappend'] = 'rotate_aligned_60_color_stage2'
-options['checkpoint_stage1'] = 'model_checkpoint_multi_pie_16-04-13-10-10_andromeda.esat.kuleuven.be_rotate_aligned_60_color_stage1_epoch199_train_810.648.p'
+options['checkpoint_output_directory'] = '/esat/tiger/xjia/image_generation/multipie_inpainting/'
+options['fappend'] = 'inpainting_aligned_60_color_stage1'
 
 options['pose_code_size'] = 7
 options['nbatch'] = 100

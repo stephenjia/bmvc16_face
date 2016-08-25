@@ -1,4 +1,3 @@
- 
 from skimage import io
 from skimage import color
 from skimage import transform
@@ -18,8 +17,6 @@ pose_size = 7
 dataset_path = '/users/visics/aghodrat/codes/eyescream/multipie/datasets/detector/per_image_dpm/'
 
 epsilon = 1e-6
-
-import pdb; pdb.set_trace()
 
 """occluded image"""
 fod = open('/esat/ruchba/xjia/image_generation/multi_pie/dataset_60_grayscale_normalized_syn_color.pkl', 'wb')

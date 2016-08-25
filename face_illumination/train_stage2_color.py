@@ -60,7 +60,10 @@ fid = open(os.path.join(options['dataset_root'],'dataset_32_prepared_aligned.pkl
 train_pair, test_pair = pickle.load(fid)
 fid.close()
 fid = open(os.path.join(options['dataset_root'],'dataset_60_color_normalized_aligned.pkl'), 'rb')
-train_set, train_img, train_code, train_mean_list, train_var_list, test_set, test_img, test_code, test_mean_list, test_var_list = pickle.load(fid)
+train_set, train_img, _, train_mean_list, train_var_list, test_set, test_img, _, test_mean_list, test_var_list = pickle.load(fid)
+fid.close()
+fid = open(os.path.join(options['dataset_root'],'dataset_60_color_normalized_aligned_illum.pkl'), 'rb')
+train_code, test_code = pickle.load(fid)
 fid.close()
 _, w, h, c = train_img.shape
 options['img_size'] = (w,h,c) 
@@ -77,7 +80,7 @@ layers_1 = get_all_layers(net_1)
 generation_1 = lasagne.layers.get_output(net_1)
 generation_1 = generation_1.dimshuffle([0,2,3,1]) # from [batch_size, channel, npx, npx] to [batch_size, npx, npx, channel]
 _generate_1 = theano.function([img_batch, pose_code], generation_1, allow_input_downcast=True) 
-checkpoint_1 = pickle.load(open(options['checkpoint_output_directory']+options['checkpoint_stage1'], 'rb')) # model trained at the first stage
+checkpoint_1 = pickle.load(open(options['checkpoint_output_directory']+'model_checkpoint_multi_pie_16-04-13-10-10_andromeda.esat.kuleuven.be_rotate_aligned_60_color_stage1_epoch199_train_810.648.p', 'rb')) # model trained at the first stage
 lasagne.layers.set_all_param_values(layers_1, checkpoint_1['model_values'], trainable=True)
 
 print('Build model stage2...')
