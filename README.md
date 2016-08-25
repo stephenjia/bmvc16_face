@@ -1,7 +1,7 @@
 # bmvc16_face
 # Introduction
 
-This repository contains code to reproduce the face rotation experiments in [Towards Automatic Image Editing: Learning to See another You](http://homes.esat.kuleuven.be/~xjia/xjia_publications/xjia_bmvc16_facefinal.pdf), a BMVC 2016 paper by Amir Ghodrati\*, Xu Jia\*, Marco Pedersoli, Tinne Tuytelaars (\* Amir and Xu contributed equally).
+This repository contains code to reproduce the face rotation experiments in section 4.1 of the paper [Towards Automatic Image Editing: Learning to See another You](http://homes.esat.kuleuven.be/~xjia/xjia_publications/xjia_bmvc16_facefinal.pdf), a BMVC 2016 paper by Amir Ghodrati\*, Xu Jia\*, Marco Pedersoli, Tinne Tuytelaars (\* Amir and Xu contributed equally).
 
 We propose a method that aims at automatically editing an image by altering its attributes. More specifically, given an image of a certain class (e.g. a human face), the method should generate a new image as similar as possible to the given one, but with an altered visual attribute (e.g. the same face with a new pose or a different illumination).
 
@@ -15,20 +15,35 @@ If you use our code in your research, please cite following paper:
 }
 ```
 
+
 # Installing
-- TODO: count dependencies and the versions that we have used: cuda 7.5, theano 0.8, lasagne 0.2, cuDNN 5.0, gcc <6, ...
-- TODO: please provide instruction for installing/how-to-use the code
+* Install [Lasagne](https://lasagne.readthedocs.io/en/latest/user/installation.html) and its prerequisites.
+* Install cuda 7.5, Theano 0.9.0, cuDNN 5.0
+
 
 # Demo
-- TODO: is it possible to make a demo(main) file which train and test the model?
+* Run the experiments for face rotation:
+First run
+```
+python train_stage1_color.py
+```
+This will write checkpoint files to the checkpoints directory.
+Then run
+```
+python train_stage2_color.py
+```
+This will write checkpoint files to the checkpoints directory.
+To evaluate the trained models on test data, run
+```
+python generate_triplet_demo_color.py
+```
+
 
 # Dataset
-- TODO: How we have built pkl dataset? please provide information about its data structure and ...
+You need to first download MultiPIE dataset.
+To crop and align faces, we use the code provided by Junho Yim for their cvpr15 paper titled ```Rotating Your Face Using Multi-task Deep Neural Network```. Please cite their paper if you use this code.
 
-# Notes
-- this code is for the task of face rotation defined in section 4.1 of the paper.
-- Outputs are stored in ...
 
-# Models
-- TODO: can you upload the models somewhere (like google drive) and mention the link here.
+# Results
+
 
