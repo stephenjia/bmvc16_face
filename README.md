@@ -20,8 +20,7 @@ Example: <br />
 ![face inpainting](https://lh6.googleusercontent.com/fDsSIWvj2F6lA2v28xQlzKNKcQiOVUWH0SkDMFmunA3xk7Hi7oMD7hYMh52hFrSYrQLBOs-_iq4p-eI=w1920-h1005) <br />
 
 # Installing
-* Install [Lasagne](https://lasagne.readthedocs.io/en/latest/user/installation.html) and its prerequisites.
-* Install cuda 7.5, Theano 0.9.0, cuDNN 5.0
+* Install cuda 7.5, Lasagne 0.2.dev1, Theano 0.9.0dev2.dev-e4e08782d3a10d010d3a99bc87fd0fc3b0465405, cuDNN 5.0
 
 
 # Demo
