@@ -15,9 +15,9 @@ If you use our code in your research, please cite following paper:
 }
 ```
 Example: <br />
-![face rotation](https://lh3.googleusercontent.com/mM-K9csNYv_K52PP5g08ZCaoN3BwEVoXE6LxUgW_oZ4fMUlVtRlBc1hMKrv_G6riL17l1sXljORiR7Y=w1920-h1005) <br />
-![face illumination] (https://lh3.googleusercontent.com/UhaP9aM_Ykyeia-7sL22IwqD-ntYlTTYCNyxT23cxdj2G9SuFT8vi0YKR9iRz3cMzBOAw5rCHcaa9VM=w1920-h1005-rw) <br />
-![face inpainting](https://lh6.googleusercontent.com/fDsSIWvj2F6lA2v28xQlzKNKcQiOVUWH0SkDMFmunA3xk7Hi7oMD7hYMh52hFrSYrQLBOs-_iq4p-eI=w1920-h1005) <br />
+![face rotation](https://lh3.googleusercontent.com/654KSk3NgLom0-UDmPmufbPiINyRzOaQN8W7dvvK0dEsDU7Z0R3eeiBUEIE6zWfEUJse0D_YgSdrUHI=w1920-h1005) <br />
+![face illumination] (https://lh4.googleusercontent.com/CT1j9emR97jpJUyv-nxCSQUEH-iucWcstHgk8lDC3-H83cJnNcQB3Yqmjbc0Pyi9t1KqLVqF0lA5gTI=w1920-h1005-rw) <br />
+![face inpainting](https://lh6.googleusercontent.com/5eVDDPPxtR1pf_2PuXF03TA0nYHBfxVeZIWlhqQNVPop66aNjgb-AXb58F95GRX62HTNnryp3zDlVEo=w1920-h1005) <br />
 
 # Installing
 * Install cuda 7.5, [Lasagne with small modification] (https://github.com/stephenjia/Lasagne), Theano 0.9.0dev2.dev-e4e08782d3a10d010d3a99bc87fd0fc3b0465405, cuDNN 5.0
@@ -45,8 +45,5 @@ python generate_triplet_demo_color.py
 # Dataset
 You need to first download MultiPIE dataset.
 To crop and align faces, we use the code provided by Junho Yim for their cvpr15 paper titled ```Rotating Your Face Using Multi-task Deep Neural Network```. Please cite their paper if you use this code for face cropping and alignment.
-
-
-# Results
 
 
