@@ -14,9 +14,11 @@ If you use our code in your research, please cite following paper:
   year      = {2016}
 }
 ```
-Example: <br />
+Face Rotation: <br />
 ![face rotation](https://lh3.googleusercontent.com/654KSk3NgLom0-UDmPmufbPiINyRzOaQN8W7dvvK0dEsDU7Z0R3eeiBUEIE6zWfEUJse0D_YgSdrUHI=w1920-h1005) <br />
+Change Illumination <br />
 ![face illumination] (https://lh4.googleusercontent.com/CT1j9emR97jpJUyv-nxCSQUEH-iucWcstHgk8lDC3-H83cJnNcQB3Yqmjbc0Pyi9t1KqLVqF0lA5gTI=w1920-h1005-rw) <br />
+Image Inpainting <br />
 ![face inpainting](https://lh6.googleusercontent.com/5eVDDPPxtR1pf_2PuXF03TA0nYHBfxVeZIWlhqQNVPop66aNjgb-AXb58F95GRX62HTNnryp3zDlVEo=w1920-h1005) <br />
 
 # Installing
