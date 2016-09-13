@@ -15,11 +15,11 @@ If you use our code in your research, please cite following paper:
 }
 ```
 Face Rotation: <br />
-![face rotation](/users/visics/xjia/public_html/xjia_publications/bmvc16/fig_multipie.png) <br />
+![face rotation](./images/fig_multipie.png) <br />
 Change Illumination <br />
-![face illumination] (https://lh4.googleusercontent.com/CT1j9emR97jpJUyv-nxCSQUEH-iucWcstHgk8lDC3-H83cJnNcQB3Yqmjbc0Pyi9t1KqLVqF0lA5gTI=w1920-h1005-rw) <br />
+![face illumination] (./images/fig_ill.png) <br />
 Image Inpainting <br />
-![face inpainting](https://lh6.googleusercontent.com/5eVDDPPxtR1pf_2PuXF03TA0nYHBfxVeZIWlhqQNVPop66aNjgb-AXb58F95GRX62HTNnryp3zDlVEo=w1920-h1005) <br />
+![face inpainting](./images/fig_synthetic.png) <br />
 
 # Installing
 * Install cuda 7.5, [Lasagne with small modification] (https://github.com/stephenjia/Lasagne), Theano 0.9.0dev2.dev-e4e08782d3a10d010d3a99bc87fd0fc3b0465405, cuDNN 5.0
