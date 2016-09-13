@@ -15,7 +15,7 @@ If you use our code in your research, please cite following paper:
 }
 ```
 Face Rotation: <br />
-![face rotation](https://lh3.googleusercontent.com/654KSk3NgLom0-UDmPmufbPiINyRzOaQN8W7dvvK0dEsDU7Z0R3eeiBUEIE6zWfEUJse0D_YgSdrUHI=w1920-h1005) <br />
+![face rotation](/users/visics/xjia/public_html/xjia_publications/bmvc16/fig_multipie.png) <br />
 Change Illumination <br />
 ![face illumination] (https://lh4.googleusercontent.com/CT1j9emR97jpJUyv-nxCSQUEH-iucWcstHgk8lDC3-H83cJnNcQB3Yqmjbc0Pyi9t1KqLVqF0lA5gTI=w1920-h1005-rw) <br />
 Image Inpainting <br />
